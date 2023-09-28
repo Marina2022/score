@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins&display=swap"
+        rel="stylesheet">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css
+">
+</head>
+
+<body>
+<div class="main-wrapper">
+  <a href="/"><img class="logo" src="img/e4l-logo-white.svg" alt="logo" width="174" height="20"></a>
+  <h1 class="title">Scores</h1>
+
+  <form class="form" action="#">
+    <div class="form-fieldset">
+      <p class="form-text">
+        1. Please estimate your energy levels, where to the right is ready to climb Everest, and left is unable to get
+        off the sofa.
+      </p>
+      <div class="range-title-wrapper">
+        <h2 class="subtitle">Energy Levels:</h2>
+        <div class="percent">50%</div>
+      </div>
+
+      <input class="range styled-slider slider-progress" type="range">
+
+    </div>
+
+    <div class="form-fieldset">
+      <p class="form-text form-text--mb24">
+        2. Choose the emotion that best reflects your strongest current emotion, and set the slider to indicate how
+        strongly.
+      </p>
+
+      <h2 class="subtitle-strongest">Strongest Emotion:</h2>
+
+      <input class="radio" type="radio" id="radio-1" name="radio">
+      <label class="label" for="radio-1">Impatience</label>
+
+      <input class="radio" type="radio" id="radio-2" name="radio">
+      <label class="label" for="radio-2">Anxiety</label>
+
+      <input class="radio" type="radio" id="radio-3" name="radio">
+      <label class="label" for="radio-3">Fear</label>
+
+      <input class="radio" type="radio" id="radio-4" name="radio">
+      <label class="label" for="radio-4">Frustration</label>
+
+      <input class="radio" type="radio" id="radio-5" name="radio">
+      <label class="label" for="radio-5">Grief</label>
+
+      <div class="range-title-wrapper--emotion">
+        <h2 class="subtitle">Emotion Strength:</h2>
+        <div class="percent">50%</div>
+      </div>
+
+      <input class="range styled-slider slider-progress" type="range">
+
+    </div>
+
+    <button class="submitBtn" type="submit">Submit</button>
+
+
+  </form>
+
+
+</div>
+
+</body>
+
+
+<script>
+  for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
+    e.style.setProperty('--value', e.value);
+    e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+    e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+    e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+  }
+</script>
+</html>
