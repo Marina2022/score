@@ -4,7 +4,6 @@ body, html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-
 }
 
 .main-wrapper {
@@ -43,8 +42,7 @@ body, html {
   max-width: 600px;
   border: none;
   border-radius: 10px;
-  margin: 0 auto;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
 }
 
 .form-text {
@@ -69,7 +67,6 @@ body, html {
   margin-top: 24px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .range-title-wrapper--emotion {
@@ -81,7 +78,6 @@ body, html {
 .percent {
   font-weight: bold;
 }
-
 
 .label {
   margin-top: 10px;
@@ -115,9 +111,7 @@ body, html {
   display: none;
 }
 
-
 .radio:checked + .label {
-
   border: 1px #F3BD43 solid;
 
   &:before {
@@ -129,6 +123,7 @@ body, html {
 }
 
 .submitBtn {
+  cursor: pointer;
   background: #F3BD43;
   border: none;
   outline: none;
@@ -143,13 +138,13 @@ body, html {
   @media (min-width: 500px) {
     max-width: 368px;
   }
-
 }
 
 //range input
 
 .range {
   width: 100%;
+  cursor: pointer;
 }
 
 input[type=range].styled-slider {

@@ -10,8 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins&display=swap"
         rel="stylesheet">
   <title>Document</title>
-  <link rel="stylesheet" href="css/style.css
-">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -20,7 +19,7 @@
   <h1 class="title">Scores</h1>
 
   <form class="form" action="#">
-    <div class="form-fieldset">
+    <fieldset class="form-fieldset">
       <p class="form-text">
         1. Please estimate your energy levels, where to the right is ready to climb Everest, and left is unable to get
         off the sofa.
@@ -32,9 +31,9 @@
 
       <input class="range styled-slider slider-progress" type="range">
 
-    </div>
+    </fieldset>
 
-    <div class="form-fieldset">
+    <fieldset class="form-fieldset">
       <p class="form-text form-text--mb24">
         2. Choose the emotion that best reflects your strongest current emotion, and set the slider to indicate how
         strongly.
@@ -63,19 +62,12 @@
       </div>
 
       <input class="range styled-slider slider-progress" type="range">
-
-    </div>
+    </fieldset>
 
     <button class="submitBtn" type="submit">Submit</button>
-
-
   </form>
-
-
 </div>
-
 </body>
-
 
 <script>
   for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
