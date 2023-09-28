@@ -8,14 +8,14 @@ import postcss from "gulp-postcss";
 import autoprefixer from "autoprefixer";
 
 export const clean = () => {
-  return gulp.src("build").pipe(del({ force: true }));
+  return gulp.src("docs").pipe(del({ force: true }));
 };
 
 const scripts = () => {
   return gulp
     .src("source/js/**/*.js")
     //.pipe(terser())  // минификатор js
-    .pipe(gulp.dest("build/js"))
+    .pipe(gulp.dest("docs/js"))
     .pipe(browser.stream());
 };
 
@@ -23,7 +23,7 @@ export const html = () => {
   return gulp
     .src("source/**/*.html")
     //.pipe(htmlmin({ collapseWhitespace: true }))  // это минифай
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("docs"));
 };
 
 export const styles = () => {
@@ -34,7 +34,7 @@ export const styles = () => {
     .pipe(sass().on("error", sass.logError))
     .pipe(sourcemaps.write())
     .pipe(postcss([autoprefixer()]))
-    .pipe(gulp.dest("build/css", { sourcemaps: "." }))
+    .pipe(gulp.dest("docs/css", { sourcemaps: "." }))
     .pipe(browser.stream());
 };
 
@@ -43,7 +43,7 @@ export const styles = () => {
 const server = (done) => {
   browser.init({
     server: {
-      baseDir: "build",
+      baseDir: "docs",
     },
     cors: true,
     notify: false,
@@ -70,7 +70,7 @@ export const copy = () => {
     .src(["source/assets/*", "source/*.ico", "source/img/**",  "source/js/**/*.js","source/img/*"], {
       base: "source",
     })
-    .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("docs"));
 };
 
 export default gulp.series(
